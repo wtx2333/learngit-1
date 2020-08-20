@@ -277,6 +277,16 @@ $ git tag -d v0.9
 $ git push origin :refs/tags/v0.9
 ```
 
+#####  八、配置git
+```
+$ git config --global color.ui true      #让git显示颜色
+
+### 配置别名
+$ git config --global alias.<别名> <原命令名>
+
+## $ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+![git log](E:\vscode\程序包\0.png)
 #####  八、相关工具及网站
 
 1. [Git 官网](https://git-scm.com/)
