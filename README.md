@@ -278,16 +278,23 @@ $ git push origin :refs/tags/v0.9
 ```
 
 #####  八、配置git
-```
+`
 $ git config --global color.ui true      #让git显示颜色
-
-### 配置别名
-$ git config --global alias.<别名> <原命令名>
-
-## $ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+`
+###### 配置Git的时候，加上 --global 是针对当前用户起作用的，如果不加，那只针对当前的仓库起作用。
+###### 每个仓库的Git配置文件都放在.git/config文件中：
+`
+$ cat .git/config     #可以查看alias后面的语句
+`
+###### 配置别名：
+` $ git config --global alias.<别名> <原命令名> `
+* 例：更改git log
 ```
-![git log](E:\vscode\程序包\0.png)
-#####  八、相关工具及网站
+$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+![git log](https://www.liaoxuefeng.com/files/attachments/919059728302912/0)
+
+#####  九、相关工具及网站
 
 1. [Git 官网](https://git-scm.com/)
 2. [GitHub-开源协作社区](https://github.com/)
