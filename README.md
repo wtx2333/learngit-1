@@ -20,32 +20,32 @@ $ git config user.name "Your Name"
 $ git config user.email "youremail@example.com"
 
 ### 查看全局配置的 用户名 和 email 
-$ git config --global user.name     查看用户名
-$ git config --global user.email     查看邮箱地址
+$ git config --global user.name     #查看用户名
+$ git config --global user.email     #查看邮箱地址
 
 ### 查看当前仓库配置的 用户名 和 email 
-$ git config user.name     查看用户名
-$ git config user.email     查看邮箱地址
+$ git config user.name     #查看用户名
+$ git config user.email     #查看邮箱地址
 
 # Git 是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址
 # git config 命令的 --global 参数，用了这个参数，表示你这台机器上所有的 Git 仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址(不加 --global)。
 
-$ git config --list --show-origin 查看所有的配置以及它们所在的文件
+$ git config --list --show-origin      #查看所有的配置以及它们所在的文件
 ```
 
 #####  三、相关命令
 
 ```
-(所有命令都在 Git Bash 中运行)
-$ git                           查看 git 的相关命令 (git --help)
-$ git --version                 查看 git 的版本
-$ git config                    查看 git config 的相关命令
-$ git pull origin develop       从远程(origin) 的 develop 分支拉取代码
+###(所有命令都在 Git Bash 中运行)
+$ git                           #查看 git 的相关命令 (git --help)
+$ git --version                 #查看 git 的版本
+$ git config                    #查看 git config 的相关命令
+$ git pull origin develop       #从远程(origin) 的 develop 分支拉取代码
 ```
 
 ###### 1. 初始化本地仓库: 在 *Git Bash* 中输入对应的命令
 ```
-注: 下面所有的命令使用的时候不用拷贝最前面的 $ 符号
+###注: 下面所有的命令使用的时候不用拷贝最前面的 $ 符号
 
 $ cd d:
 $ mkdir learngit
@@ -59,17 +59,17 @@ $ pwd
 ```
 
 ```
-# 不想要 git 管理跟踪的文件,可以在仓库根目录添加 .gitignore 文件,在里面写对应的规则
-$ git init              把当前目录初始化为 git 仓库
-$ ls -ah                查看当前目录下的文件,包含隐藏文件 (不带 -ah 看不了隐藏文件)
+### 不想要 git 管理跟踪的文件,可以在仓库根目录添加 .gitignore 文件,在里面写对应的规则
+$ git init              #把当前目录初始化为 git 仓库
+$ ls -ah                #查看当前目录下的文件,包含隐藏文件 (不带 -ah 看不了隐藏文件)
 ```
 
 ###### 2. 添加文件到仓库
 ```
-$ git add <file>              如: git add readme.txt
-$ git commit -m "description"     如: git commit -m "add readme.txt"
+$ git add <file>              #如: git add readme.txt
+$ git commit -m "description"     #如: git commit -m "add readme.txt"
 
-# 添加文件到仓库分两步:
+### 添加文件到仓库分两步:
 # 1. add 添加该文件到仓库, 
 # 添加许多同种类型的文件,可以使用通配符 * (记得加引号)  如: git add "*.txt"  命令就是添加所有 .txt 文件
 # 2. commit 提交该文件到仓库, description 为你对该次提交的描述说明, 
@@ -87,6 +87,7 @@ $ git diff
 $ git diff <file>                
 $ git diff --cached
 $ git diff HEAD -- <file>
+
 # git diff 查看工作区(work dict)和暂存区(stage)的区别
 # git diff --cached 查看暂存区(stage)和分支(master)的区别
 # git diff HEAD -- <file> 查看工作区和版本库里面最新版本的区别
@@ -129,16 +130,15 @@ $ git reflog
 ###### 8. 撤销修改
 ######- 丢弃工作区 (Working Directory) 的修改
 ```
-$ git restore <file>  (建议使用) (如: git restore readme.txt)
-$ git checkout -- <file>
-# 命令中 -- 很重要，没有就变成 “切换到另一个分支” 的命令
+$ git restore <file>     #(建议使用) (如: git restore readme.txt)
+$ git checkout -- <file>     # 命令中 -- 很重要，没有就变成 “切换到另一个分支” 的命令
 ```
 ######- 丢弃暂存区 (stage/index) 的修改
 ```
-# 第一步: 把暂存区的修改撤销掉(unstage)，重新放回工作区
+### 第一步: 把暂存区的修改撤销掉(unstage)，重新放回工作区
 $ git restore --staged <file>
 
-# 第二步: 撤销工作区的修改
+### 第二步: 撤销工作区的修改
 $ git restore <file>
 
 ```
@@ -153,16 +153,16 @@ $ git restore <file>
 ```
 $ git rm <file>
 
-# git rm <file> 相当于执行
-- rm <file>
-- git add <file
+# git rm <file> 相当于执行:
+    - rm <file>
+    - git add <file>
 ```
 
 ###### 其他命令
 ```
-$ cat <file>    显示文件内容,如: cat readme.txt 就是在 git bash 中显示该文件内容
-$ cd ~         进入用户主目录
-$ open ~/.ssh  Mac 打开存放 ssh 文件夹
+$ cat <file>     #显示文件内容,如: cat readme.txt 就是在 git bash 中显示该文件内容
+$ cd ~      #进入用户主目录
+$ open ~/.ssh     #Mac 打开存放 ssh 文件夹
 ```
 
 #####  四、相关名词理解 :
@@ -187,26 +187,25 @@ $ ssh-keygen -t rsa -C "youremail@example.com"
 $ cd ~/.ssh
 $ cat id_rsa.pub
 
-$ open ~/.ssh   (Mac 下打开存放 Github 生成的 ssh Key 文件夹)
-
-$ pbcopy < ~/.ssh/id_rsa.pub  Mac 下拷贝生成的公钥内容
+$ open ~/.ssh      #(Mac 下打开存放 Github 生成的 ssh Key 文件夹)
+$ pbcopy < ~/.ssh/id_rsa.pub      #Mac 下拷贝生成的公钥内容
 ```
 
 ###### 3. 关联远程仓库 (先有本地仓库)
 ```
-$ git remote add origin git@github.com:renyuns/learngit.git
+$ git remote add origin git@github.com:wtx2333/learngit.git
 # 后面的地址换成自己的 GitHub 仓库地址
 ```
 
 ###### 4. 推送到远程仓库
 ```
-$ git remote       查看远程库信息
-$ git remote -v    查看远程库详细信息
-$ git remote rm origin  删除已关联的远程库 origin
-$ git push -u origin master    #第一次推送
-$ git push origin master      推送本地 master 分支到远程库
-$ git push origin dev         推送本地 dev 分支到远程库
-#  除了第一次推送,不需要添加 -u 参数
+$ git remote       #查看远程库信息
+$ git remote -v      #查看远程库详细信息
+$ git remote rm origin      #删除已关联的远程库 origin
+$ git push -u origin master      #第一次推送
+$ git push origin master      #推送本地 master 分支到远程库
+$ git push origin dev       #推送本地 dev 分支到远程库
+###  除了第一次推送,不需要添加 -u 参数
 
 # 一个本地库关联多个远程库,例如同时关联 GitHub 和 Gitee:
 # 1. 先关联GitHub的远程库：(注意:远程库的名称叫 github，不叫 origin)
@@ -221,57 +220,57 @@ $ git push gitee master
 
 ###### 5. 从远程仓库克隆 (先有远程库)
 ```
-$ git clone git@github.com:renyuns/gitskills.git
-# GitHub 支持多种协议,上面是 ssh 协议,还有 https 协议
+$ git clone git@github.com:wtx2333/gitskills.git
+# GitHub 支持多种协议,上面是 ssh 协议,还有 https 协议（git clone http://..../仓库名.git）
 ```
 
 #####  六、分支
 ```
-$ git branch       查看分支列表及当前分支
-$ git branch dev   创建 dev 分支
-$ git switch dev   切换到 dev 分支  (git checkout dev)
-$ git switch -c dev   创建并切换到新的 dev 分支  (git checkout -b dev)
-$ git switch -c dev origin/dev  创建远程 origin 的 dev 分支到本地并切换到该分支
-$ git branch -d dev   删除 dev 分支
-$ git branch -D dev   强制删除 dev 分支
-$ git merge dev       合并 dev 分支到当前分支 (当有冲突的时候,需要先解决冲突)
-$ git merge --no-ff -m "merge with no-ff" dev  合并 dev 分支到当前分支(禁用Fast forward 合并策略)
+$ git branch       #查看分支列表及当前分支
+$ git branch dev       #创建 dev 分支
+$ git switch dev       #切换到 dev 分支  (git checkout dev)
+$ git switch -c dev       #创建并切换到新的 dev 分支  (git checkout -b dev)
+$ git switch -c dev origin/dev       #创建远程 origin 的 dev 分支到本地并切换到该分支
+$ git branch -d dev       #删除 dev 分支
+$ git branch -D dev       #强制删除 dev 分支
+$ git merge dev       #合并 dev 分支到当前分支 (当有冲突的时候,需要先解决冲突)
+$ git merge --no-ff -m "merge with no-ff" dev       #合并 dev 分支到当前分支(禁用Fast forward 合并策略)
 
-$ git pull  拉取远程分支最新的内容
-$ git branch --set-upstream-to=origin/dev dev  指定本地 dev 分支与远程 origin/dev 分支的链接
+$ git pull       #拉取远程分支最新的内容
+$ git branch --set-upstream-to=origin/dev dev       #指定本地 dev 分支与远程 origin/dev 分支的链接
 
 # 为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
 # 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而 fast forward 合并就看不出来曾经做过合并
 
-$ git log --graph  查看分支合并图
+$ git log --graph       #查看分支合并图
 $ git log --graph --pretty=oneline --abbrev-commit
 
-$ git stash  保存当前工作区和暂存区的修改状态,切换到其他分支修复 bug 等工作,然后在回来继续工作
-$ git stash list  查看保存现场的列表
-$ git stash pop   恢复的同时把 stash 内容也删除
-$ git stash apply  恢复现场，stash内容并不删除
-$ git stash drop   删除 stash 内容
-$ git stash apply stash@{0}  多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash
-# 通常在 dev 分支开发时,需要有紧急 bug 需要马上处理,保存现在修改的文件等,先修复 bug 后再回来继续工作的情况
+$ git stash       #保存当前工作区和暂存区的修改状态,切换到其他分支修复 bug 等工作,然后在回来继续工作
+$ git stash list       #查看保存现场的列表
+$ git stash pop       #恢复的同时把 stash 内容也删除
+$ git stash apply       #恢复现场，stash内容并不删除
+$ git stash drop       #删除 stash 内容
+$ git stash apply stash@{0}        #多次stash，恢复的时候，先用git stash list查看，然后恢复指定的stash
+### 通常在 dev 分支开发时,需要有紧急 bug 需要马上处理,保存现在修改的文件等,先修复 bug 后再回来继续工作的情况
 
-$ git cherry-pick <commit> 复制一个特定的提交到当前分支(当前分支的内容需要先 commit,然后冲突的文件需要解决冲突,然后 commit)
+$ git cherry-pick <commit>       #复制一个特定的提交到当前分支(当前分支的内容需要先 commit,然后冲突的文件需要解决冲突,然后 commit)
 
-$ git rebase  把本地未push的分叉提交历史整理成直线(使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比)
+$ git rebase       #把本地未push的分叉提交历史整理成直线(使得我们在查看历史提交的变化时更容易，因为分叉的提交需要三方对比)
 ```
 
 #####  七、标签
 ```
 # 切换到对应的分支 branch 上,查看或者操作对应的标签 tag 
-$ git tag  查看所有的标签
-$ git tag <tagname>  打标签(默认标签是打在最新提交的commit上) 如: git tag v1.0
-$ git tag <tagname> <commit_id>  给对应的 commit_id 打标签
-$ git tag -a <tagname> -m "标签说明信息" <commit_id> 创建带有说明的标签，用-a指定标签名，-m指定说明文字
-$ git tag -d <tagname> 删除一个本地标签
-$ git push origin :refs/tags/<tagname>可以删除一个远程标签
-$ git show <tagname>  查看标签信息
+$ git tag       #查看所有的标签
+$ git tag <tagname>       #打标签(默认标签是打在最新提交的commit上) 如: git tag v1.0
+$ git tag <tagname> <commit_id>       #给对应的 commit_id 打标签
+$ git tag -a <tagname> -m "标签说明信息" <commit_id>        #创建带有说明的标签，用-a指定标签名，-m指定说明文字
+$ git tag -d <tagname>        #删除一个本地标签
+$ git push origin :refs/tags/<tagname>        #可以删除一个远程标签
+$ git show <tagname>        #查看标签信息
 
-$ git push origin <tagname>  推送一个本地标签到远程
-$ git push origin --tags     一次性推送全部尚未推送到远程的本地标签
+$ git push origin <tagname>         #推送一个本地标签到远程
+$ git push origin --tags        #一次性推送全部尚未推送到远程的本地标签
 
 # 删除远程标签,需要先删除本地标签,然后在删除远程标签,如:删除标签 v0.9
 $ git tag -d v0.9
